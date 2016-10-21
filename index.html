@@ -5,6 +5,7 @@
 	<title>what day</title>
 	<link rel="stylesheet" type="text/css" href="node_modules/semantic-ui/dist/semantic.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body>
 	<div id="message" class="error">
@@ -14,29 +15,30 @@
 		<p>L'année doit être supérieur à 0</p>
 	</div>
 	<h1>What day is it?</h1>
-	<div class="jourmoisannee">
+	<div id="resultat" class="leJour"><button id="restart">Restart</button></div>
+	<div id="jourmoisannee">
 		<span>Jour</span>
 		<input type="number" id="jour">
 		<span>Mois</span>
-	
-		<select name="mois" id="selectmois">
-			<option value="0">janvier</option>
-			<option value="1">février</option>
-			<option value="2">mars</option>
-			<option value="3">avril</option>
-			<option value="4">mai</option>
-			<option value="5">juin</option>
-			<option value="6">juillet</option>
-			<option value="7">août</option>
-			<option value="8">septembre</option>
-			<option value="9">octobre</option>
-			<option value="10">novembre</option>
-			<option value="11">décembre</option>
+			<select name="mois" id="selectmois">
+				<option value="0">janvier</option>
+				<option value="1">février</option>
+				<option value="2">mars</option>
+				<option value="3">avril</option>
+				<option value="4">mai</option>
+				<option value="5">juin</option>
+				<option value="6">juillet</option>
+				<option value="7">août</option>
+				<option value="8">septembre</option>
+				<option value="9">octobre</option>
+				<option value="10">novembre</option>
+				<option value="11">décembre</option>s
 		</select>
 		<span>Année</span>
 		<input type="number" id="annee" value="2000">
 		<button>Vérifier</button>
 	</div>
+
 
 
 <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>

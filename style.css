@@ -14,3 +14,13 @@
 	color:#fff;
 
 }
+#resultat{
+	
+	height: 100vh;
+	background-color: #9055A2;
+}
+.leJour{
+	font-size: 100pt;
+	color:#fff;
+	font-family: 'Open Sans', sans-serif;
+}

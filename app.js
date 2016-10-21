@@ -6,40 +6,59 @@ console.log('hello world');
 		mois : null,
 		annee: null,
 		mydate: null,
+		resultday: null,
+
 			
 		init : function(){
 			moment.locale('fr')
 			this.listners();
 			$('#message').hide();
 			$('#message2').hide();
+			$('#resultat').hide();
 		},
 		listners : function(){
 			$('button').click(day.recupInput);
 		},
 		recupInput : function(){
-			day.error();
+			// day.error();
 			day.jour = parseInt($("#jour").val(), 10);
 			console.log(day.jour);
 			day.mois = $('#selectmois').val();
 			console.log(day.mois);
 			day.annee = parseInt($('#annee').val(), 10);
 			console.log(day.annee);
-			day.mydate = moment().year(day.annee).month(day.mois).date(day.jour);
-			console.log(day.mydate.format('dddd'));
+			day.myDate = moment().year(day.annee).month(day.mois).date(day.jour);
+			day.verifJour();
+			day.verifAnnee();
+			day.resultDay = day.myDate.format('dddd');
+			console.log(day.resultDay);
+			day.result();
+
 		},
 
-		error: function(){
+		verifJour: function(){
 			if(day.jour < 1 || day.jour > 31){
-				console.log('zaeerztrtyyuuuuuuuuuuuuu')
+				console.log(day.jour);
 				$('#message').show();
 				$('#jour').css("border", "2px solid red");
-
 			}
-			else if (day.annee < 1){
+		},
+		verifAnnee :function(){
+			if(day.annee < 0){
 				$('#message2').show();
 			}
-			
 		},
+		result : function(){
+			$("#resultat").show();
+			$("#resultat").text(day.resultDay);
+			$("#jourmoisannee").hide();
+			$('#restart').click(function(){
+				$("#jourmoisannee").show();
+
+			});
+
+		},
+			
 
 	};
 
