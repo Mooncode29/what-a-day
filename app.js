@@ -4,67 +4,44 @@ console.log('hello world');
 	var day = {
 		jour : null,
 		mois : null,
-		année: null,
-		mystring: null,
-		init : function(){
-			this.listners();
+		annee: null,
+		mydate: null,
 			
+		init : function(){
+			moment.locale('fr')
+			this.listners();
+			$('#message').hide();
+			$('#message2').hide();
 		},
 		listners : function(){
-			$('button').click(function(){
-				day.recupInput();
-
-			})
-
+			$('button').click(day.recupInput);
 		},
 		recupInput : function(){
-			var jour = parseInt($("#jour").val(), 10);
-			console.log(jour);
-			var mois = $('#selectmois').val();
-			console.log(mois);
-			var annee = parseInt($('#annee').val(), 10);
-			console.log(annee);
+			day.error();
+			day.jour = parseInt($("#jour").val(), 10);
+			console.log(day.jour);
+			day.mois = $('#selectmois').val();
+			console.log(day.mois);
+			day.annee = parseInt($('#annee').val(), 10);
+			console.log(day.annee);
+			day.mydate = moment().year(day.annee).month(day.mois).date(day.jour);
+			console.log(day.mydate.format('dddd'));
+		},
 
-			var mystring = (moment().year(annee).month(mois).date(jour))
-			var myvar = mystring.toString();
-			var andro = myvar[0] + myvar[1] + myvar[2];
-			if (andro === "Mon")
-				alert('Monday');
-			if (andro === "Tue")
-				alert('Monday');
-			if (andro === "Wed")
-				alert('Wednesday');
-			if (andro === "Thu")
-				alert('Thursday');
-			if (andro === "Fri")
-				alert('Friday');
-			if (andro === "Sat")
-				alert('Saturday');
-			if (andro === "Sun")
-				alert('Sunday');
+		error: function(){
+			if(day.jour < 1 || day.jour > 31){
+				console.log('zaeerztrtyyuuuuuuuuuuuuu')
+				$('#message').show();
+				$('#jour').css("border", "2px solid red");
 
-			if(jour < 1 || jour > 31){
-				alert('le jour doit être compris entre 1 et 31');
 			}
-			if (annee < 0){
-				alert("l'année doit être supérieur à zero!");
+			else if (day.annee < 1){
+				$('#message2').show();
 			}
+			
+		},
 
-
-		}
-
-
-
-
-
-
-
-
-
-
-
-
-	}
+	};
 
 
 day.init();

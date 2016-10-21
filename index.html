@@ -4,8 +4,15 @@
 	<meta charset="UTF-8">
 	<title>what day</title>
 	<link rel="stylesheet" type="text/css" href="node_modules/semantic-ui/dist/semantic.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+	<div id="message" class="error">
+		<p>Le jour doit être compris entre 1 et 31</p>
+	</div>
+	<div id="message2" class="error">
+		<p>L'année doit être supérieur à 0</p>
+	</div>
 	<h1>What day is it?</h1>
 	<div class="jourmoisannee">
 		<span>Jour</span>
@@ -13,18 +20,18 @@
 		<span>Mois</span>
 	
 		<select name="mois" id="selectmois">
-			<option value="janvier">janvier</option>
-			<option value="fevrier">février</option>
-			<option value="mars">mars</option>
-			<option value="avril">avril</option>
-			<option value="mai">mai</option>
-			<option value="juin">juin</option>
-			<option value="juillet">juillet</option>
-			<option value="aout">août</option>
-			<option value="septembre">septembre</option>
-			<option value="octobre">octobre</option>
-			<option value="novembre">novembre</option>
-			<option value="decembre">décembre</option>
+			<option value="0">janvier</option>
+			<option value="1">février</option>
+			<option value="2">mars</option>
+			<option value="3">avril</option>
+			<option value="4">mai</option>
+			<option value="5">juin</option>
+			<option value="6">juillet</option>
+			<option value="7">août</option>
+			<option value="8">septembre</option>
+			<option value="9">octobre</option>
+			<option value="10">novembre</option>
+			<option value="11">décembre</option>
 		</select>
 		<span>Année</span>
 		<input type="number" id="annee" value="2000">
