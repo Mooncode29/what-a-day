@@ -8,14 +8,16 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body>
-	<div id="message" class="error">
+	<div id="message1" class="error">
 		<p>Le jour doit être compris entre 1 et 31</p>
 	</div>
 	<div id="message2" class="error">
 		<p>L'année doit être supérieur à 0</p>
 	</div>
-	<h1>What day is it?</h1>
-	<div id="resultat" class="leJour"><button id="restart">Restart</button></div>
+	<div id="resultat" class="leJour">
+		<button id="restart">Restart</button>
+	</div>
+	
 	<div id="jourmoisannee">
 		<span>Jour</span>
 		<input type="number" id="jour">
@@ -36,7 +38,9 @@
 		</select>
 		<span>Année</span>
 		<input type="number" id="annee" value="2000">
-		<button>Vérifier</button>
+	</div>
+	<div id="btn">
+		<button id="verifier">Vérifier</button>
 	</div>
 
 
